@@ -1,0 +1,22 @@
+<h2>Por capital</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- (onValue)="searchByCapital($event)" -->
+    <!-- El oundebounce es un evento generado por su hijo el sharedBox -->
+    <shared-search-box
+      (onDebounce)="searchByCapital($event)"
+      [initialValue]="initialValue"
+      placeholder="Busca por capital">
+    </shared-search-box>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <hr>
+    <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+    <countries-country-table [countries]="countries"></countries-country-table>
+  </div>
+</div>
